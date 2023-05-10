@@ -1,0 +1,115 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0">
+    <title>Hissiyotlari darajasi</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/headers/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link rel="stylesheet" href="{% static 'bootstrap.min.css' %}">
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+    <!-- Custom styles for this template -->
+    <link rel="stylesheet" href="{% static 'headers.css' %}">
+  </head>
+  <body>
+    
+
+<main>
+
+  <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <img src="{% static 'image/Feel.png'%}" style="width: 60px; height: 60px;" class="rounded" alt="...">
+        <hr style="width:20px; border:none; background-color:rgb(255, 255, 255);">
+        <span class="fs-4">Hissiyotlari darajasi</span>
+      </a>
+
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active" style="background-color: rgb(255, 255, 255); color: black; font-size: 1rem;"  aria-current="page">Asos</a></li>
+        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link" style="background-color: rgb(255, 255, 255); color: black;" >Jadval</a></li>
+        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link" style="background-color: rgb(255, 255, 255); color: black;" >Biz haqimizda</a></li>
+      </ul>
+    </header>
+  </div>
+  <br><hr>
+
+    <div class="container">
+
+
+      <div class="card">
+        <div class="card-body">
+          <h1 style="text-align: center;">Uzingizni hissiyotlarizni yozing !</h1>
+          <br><hr><br>
+          <form method="post" action=".">
+            <div class="input-group mb-3">
+              <form method="post">
+                {% csrf_token %}
+                {{ form.name }}
+                <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+            </form>
+        </div>
+        <br>
+        <br>
+        {% if text %}
+          {% if text >= 0.9 %}
+              <h1><p>I will happy &#128517;</p></h1> <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% elif text >= 0.8 %}          
+               <h1><p>I will funny &#128513;</p></h1>  <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% elif text >= 0.7 %}          
+              <h1><p>I will nice &#128578;</p></h1> <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% elif text >= 0.6 %}          
+              <h1><p>I will good &#128512;</p></h1>  <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% elif text >= 0.5 %}          
+              <h1><p>I will norman &#128527;</p></h1> <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% elif text >= 0.4 %}          
+             <h1><p>I will be better &#128521;</p></h1> <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% elif text >= 0.3 %}          
+             <h1><p>I will hurts &#128530;</p></h1> <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% elif text >= 0.2 %}          
+              <h1><p>I will angry &#128529;</p></h1> <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% elif text >= 0.1 %}          
+              <h1><p>I will excite &#128534;</p></h1> <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% elif text <= 0.1 %}          
+              <h1><p>I will terrable &#128542;</p></h1> <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% else %}
+              <h1><p>I will understand  &#129320;</p></h1> <h3>Ijobiyligi {{ foiz }}% darajada </h3>
+          {% endif %}
+      {% endif %}
+      </div>
+    </div>
+
+  </div>
+  
+</main>
+
+
+    <script src="{% static 'bootstrap.bundle.min.js' %}"></script>
+
+      
+  </body>
+</html>
